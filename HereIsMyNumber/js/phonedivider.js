@@ -5,8 +5,8 @@
         This tool converts the phone number to the mathematical expression.
 */
 
-var result;
-var telNumber=123456;
+var result = "";
+var telNumber = 123456;
 
 var a = Math.floor(Math.random()*Math.pow(10, 9));
 var b = -Math.floor(Math.random()*Math.pow(10, 9));
@@ -18,6 +18,7 @@ result+="-";
 add(run(-b));
 result+="+";
 add(run(c));
+
 if (d>0){
 result+="-";
 add(run(d));
@@ -33,7 +34,6 @@ result+=array[0]+"^"+array[1];
 }else{
 result+=array[0];
 }
-
 for(var i = 2; i < array.length; i+=2) {
 if(array[i+1]!=1){
 result+="*"+array[i]+"^"+array[i+1];
