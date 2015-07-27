@@ -2,18 +2,16 @@
 	"Calculate my Phone Number"
 	Author: Darius Miliauskas
 	Date: 2015-07-14
-  This tool converts the phone number to the arithmetical expression.
+        This tool converts the phone number to the mathematical expression.
 */
-var result = "";
 
-var telNumber=1234567890;
+var result;
+var telNumber=123456;
+
 var a = Math.floor(Math.random()*Math.pow(10, 9));
 var b = -Math.floor(Math.random()*Math.pow(10, 9));
 var c = Math.floor(Math.random()*Math.pow(10, 9));
 var d = a+b+c-telNumber;
-console.log("ap"+(a+b));
-console.log("ap"+(a+b+c));
-console.log(a+b+c-d);
 
 add(run(a));
 result+="-";
@@ -27,11 +25,9 @@ add(run(d));
 result+="+";
 add(run(-d));
 }
-
 console.log(result);
 
 function add(array){
-//console.log(array);
 if(array[1]!=1){
 result+=array[0]+"^"+array[1];
 }else{
@@ -45,17 +41,14 @@ result+="*"+array[i]+"^"+array[i+1];
 result+="*"+array[i];
 }
 }
-
 }
 
 function run(number){
-console.log(number);
 var array = [];
-var i=2;
+var i=2, n;
 while(number>1){
 if(number % i == 0) {
-//array.add(i, divides (number, i));
-var n = divides (number, i);
+n = divides (number, i);
 array.push(i, n);
 number=number/(Math.pow(i, n));
 }
@@ -74,6 +67,8 @@ number=number/value;
 return n;
 }
 
+
+//ADDITIONAL FUNCTIONS
 function isPrime(value) {
     for(var i = 2; i < value; i++) {
         if(value % i === 0) {
